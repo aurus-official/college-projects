@@ -1,4 +1,5 @@
 // Created by Russel Pardillo Quinto
+// https://github.com/aurus-official/college-projects
 // Built by creating a frame, application of encapsulation,
 // and my own implementation.
 // Usage of factory design pattern and recursion.
@@ -10,6 +11,7 @@
 // Fixed bug on floating point calculations.
 // Fixed bug on negative numbers.
 // Fixed recursion problem for multiple numbers.
+// Fixed subtraction in multiple numbers.
 
 import java.awt.*;
 import java.awt.event.*;
