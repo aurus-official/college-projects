@@ -16,12 +16,12 @@ public class SalaryCalculator {
         int selectedOption = scn.nextInt();
         System.out.print("Enter rate -> ");
         float inputtedRate = scn.nextFloat();
-        
+        scn.close();
         float salary = calculate(timeRendered, inputtedRate, selectedOption);
         System.out.println(String.format("The salary is %.2f.", salary));
     }
 
-    public static float[] calculate(int timeRendered, float rate, int timeUnit) {
+    public static float calculate(int timeRendered, float rate, int timeUnit) {
         switch(timeUnit) {
             case 1:
                 timeRendered /= 3600;
