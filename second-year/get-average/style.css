@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #ebebeb;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1em;
+    margin-bottom: 1.5em;
+}
+
+.display-container > * {
+    padding: 0.25em 0.55em;
+    font-size: 3rem;
+}
+
+.number, .compute-button {
+    padding: 0.5em 0.75em;
+    margin: 0.25em 0;
+    border: solid 0.1em #120f0f;
+}
+
+.number::placeholder {
+    color: #120f0f;
+}
+
+.number {
+    font-size: 1.25em;
+}
+
+.compute-button {
+    letter-spacing: 0.025em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: all 0.75s;
+    font-size: 1.5em;
+}
+
+.compute-button:focus {
+    background-color: #120f0f;
+    color: whitesmoke;
+}
+

@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #ebebeb;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.num-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.num-container > * {
+    text-decoration: none;
+    padding: 1em 1.25em;
+    margin: 1em 0.25em;
+    font-size: 1.1rem;
+}
+
+.num-container > *::placeholder {
+    color: black;
+    letter-spacing: 0.025em;
+}
+
+.op-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.op-container > * {
+    outline: none;
+    padding: 0.5em 1.25em ;
+    background-color: transparent;
+    border: solid 0.1em #120f0f;
+    margin: 0.25em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all .75s;
+    letter-spacing: 0.025em;
+}
+
+.op-container > *:focus {
+    background-color: #120f0f;
+    color: whitesmoke;
+}
+
+#output {
+    font-size: 4rem;
+    padding-bottom: 0.5em;
+}

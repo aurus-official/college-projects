@@ -17,7 +17,7 @@ public class SalaryCalculator {
         System.out.print("Enter rate -> ");
         float inputtedRate = scn.nextFloat();
         scn.close();
-        float salary = calculate(timeRendered, inputtedRate, selectedOption);
+        float salary= calculate(timeRendered, inputtedRate, selectedOption);
         System.out.println(String.format("The salary is %.2f.", salary));
     }
 

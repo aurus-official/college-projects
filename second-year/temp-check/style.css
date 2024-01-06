@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+#head-title {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 30%;
+    border-top: solid 0.15em #212121;
+    margin-top: 0.25em;
+}
+
+#temp-input {
+    font-size: 1.5rem;
+    padding: 0.65rem 1em;
+    text-align: center;
+    border: none;
+    border-bottom: solid 0.2em #212121;
+    width: 75%;
+    outline: none;
+}
+
+#temp-input::placeholder {
+    color: #212121;
+}
+
+.checkTemp {
+    background-color: transparent;
+    border: solid 0.5em #212121;
+    padding: 0.65rem 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: solid 0.01em #212121;
+    border-top: solid 0.01em #212121;
+    border-right: solid 0.01em #212121;
+    position: relative;
+    transition: all 1.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.checkTemp::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 0;
+    height: 100%;
+    background-color: #212121;
+    transition: all 0.75s;
+    transition-timing-function: ease-in-out;
+    z-index: -1;
+}
+
+.checkTemp:hover::before {
+    width: 100%;
+}
+
+.checkTemp:hover {
+    color: whitesmoke;
+}
+
+#display {
+    font-size: 3rem;
+}
+
+#arrowleft {
+    height: 20%;
+    aspect-ratio: 3/1;
+    background-color: #212121;
+    position: absolute;
+    left: -5%;
+}
+
+#triangleleft {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: .75em solid transparent;
+    border-bottom: .75em solid transparent;
+    border-left: 1.5em solid #212121;
+    left: 0%;
+}
+
+.container {
+    margin-top: 7rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#triangleright {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: .75em solid transparent;
+    border-bottom: .75em solid transparent;
+    border-right: 1.5em solid #212121;
+    right: 0%;
+
+}
+
+#arrowright {
+    height: 20%;
+    aspect-ratio: 3/1;
+    background-color: #212121;
+    position: absolute;
+    right: -5%;
+}

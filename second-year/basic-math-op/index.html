@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Basic Operations</title>
+</head>
+<body>
+    <p id="output">__ ? __ = __</p>
+
+    <div class="num-container">
+        <input id="first" type="text" placeholder="FIRST NUMBER">
+        <input id="second" type="text" placeholder="SECOND NUMBER">
+    </div>
+
+    <div class="op-container">
+        <button name="add" onclick=chooseOperation(event.target.name)>ADD</button>
+        <button name="subtract" onclick=chooseOperation(event.target.name)>MINUS</button>
+        <button name="multiply" onclick=chooseOperation(event.target.name)>MULTIPLY</button>
+        <button name="divide" onclick=chooseOperation(event.target.name)>DIVIDE</button>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
