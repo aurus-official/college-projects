@@ -25,10 +25,10 @@ public class ScientificCalculator {
     private final int FRAME_HEIGHT = 340;
     private final int FRAME_WIDTH = 300;
     private final int OUTER_PADDING = 15;
-    private String digitButtonText[] = {"7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "+/-", "."};
-    private String operatorButtonText[] = {"/", "sqrt", "*", "%", "-", "1/X", "+", "=" };
-    private String memoryButtonText[] = {"MC", "MR", "MS", "M+" };
-    private String specialButtonText[] = {"CE", "AC"};
+    private String digitButtonText[] = { "7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "+/-", "." };
+    private String operatorButtonText[] = { "/", "sqrt", "*", "%", "-", "1/X", "+", "=" };
+    private String memoryButtonText[] = { "MC", "MR", "MS", "M+" };
+    private String specialButtonText[] = { "CE", "AC" };
     private ArrayList<String> buffer = new ArrayList<String>();
     private Label currentLabel;
     private Label bufferLabel;
@@ -56,7 +56,8 @@ public class ScientificCalculator {
         currentLabel.setForeground(Color.WHITE);
         main.add(currentLabel);
 
-        ArrayList<ButtonInfo> digitButtonList = new DigitButtonFactory(digitButtonText, INNER_PADDING, 50, 160).getDigitButtonList();
+        ArrayList<ButtonInfo> digitButtonList = new DigitButtonFactory(digitButtonText, INNER_PADDING, 50, 160)
+                .getDigitButtonList();
         for (ButtonInfo i : digitButtonList) {
             Button tempButton = i.getValue();
             int[] tempCoords = i.getCoords();
@@ -93,7 +94,8 @@ public class ScientificCalculator {
             });
         }
 
-        ArrayList<ButtonInfo> operatorButtonList = new OperatorButtonFactory(operatorButtonText, INNER_PADDING, 190, 160).getOperatorButtonList();
+        ArrayList<ButtonInfo> operatorButtonList = new OperatorButtonFactory(operatorButtonText, INNER_PADDING, 190,
+                160).getOperatorButtonList();
         for (ButtonInfo i : operatorButtonList) {
             Button tempButton = i.getValue();
             int[] tempCoords = i.getCoords();
@@ -105,7 +107,7 @@ public class ScientificCalculator {
                     String tempLabelValue = currentLabel.getText();
                     buffer.add(tempLabelValue);
 
-                    switch(tempButton.getLabel()) {
+                    switch (tempButton.getLabel()) {
                         case "+":
                         case "-":
                         case "*":
@@ -125,7 +127,8 @@ public class ScientificCalculator {
                             }
                             evaluateEquation();
                             try {
-                                bufferLabel.setText(bufferLabel.getText().concat(String.format(" = %s", buffer.get(0))));
+                                bufferLabel
+                                        .setText(bufferLabel.getText().concat(String.format(" = %s", buffer.get(0))));
                             } catch (IndexOutOfBoundsException iee) {
                                 System.out.println("NO DIVISION!");
                             }
@@ -140,7 +143,8 @@ public class ScientificCalculator {
             });
         }
 
-        ArrayList<ButtonInfo> memoryButtonList = new MemoryButtonFactory(memoryButtonText, INNER_PADDING, 10, 160).getMemoryButtonList();
+        ArrayList<ButtonInfo> memoryButtonList = new MemoryButtonFactory(memoryButtonText, INNER_PADDING, 10, 160)
+                .getMemoryButtonList();
         for (ButtonInfo i : memoryButtonList) {
             Button tempButton = i.getValue();
             int[] tempCoords = i.getCoords();
@@ -148,7 +152,8 @@ public class ScientificCalculator {
             main.add(tempButton);
         }
 
-        ArrayList<ButtonInfo> specialButtonList = new SpecialButtonFactory(specialButtonText, INNER_PADDING, 10, 110).getSpecialButtonList();
+        ArrayList<ButtonInfo> specialButtonList = new SpecialButtonFactory(specialButtonText, INNER_PADDING, 10, 110)
+                .getSpecialButtonList();
         for (ButtonInfo i : specialButtonList) {
             Button tempButton = i.getValue();
             int[] tempCoords = i.getCoords();
@@ -169,7 +174,7 @@ public class ScientificCalculator {
     }
 
     public void evaluateEquation() {
-        String operatorPrecendence[] = {"*", "/", "+", "-"};
+        String operatorPrecendence[] = { "*", "/", "+", "-" };
 
         for (String i : operatorPrecendence) {
             int opIndex = buffer.indexOf(i);
@@ -255,12 +260,14 @@ class DigitButtonFactory {
         for (int i = 0; i < digitArrayText.length; ++i) {
             Button tempButton = new Button(digitArrayText[i]);
             if (i % 3 == 0 && i != 0) {
-                x=50;
-                y+=40;
+                x = 50;
+                y += 40;
             }
             ButtonInfo tempDigitButton = new ButtonInfo(x + padding, y, tempButton);
             digitButtonList.add(tempDigitButton);
-            x+=40; } }
+            x += 40;
+        }
+    }
 
     public ArrayList<ButtonInfo> getDigitButtonList() {
         return digitButtonList;
@@ -274,13 +281,13 @@ class OperatorButtonFactory {
         for (int i = 0; i < operatorArrayText.length; ++i) {
             Button tempButton = new Button(operatorArrayText[i]);
             if (i % 2 == 0 && i != 0) {
-                x=190;
-                y+=40;
+                x = 190;
+                y += 40;
             }
 
             ButtonInfo tempDigitButton = new ButtonInfo(x + padding, y, tempButton);
             operatorButtonList.add(tempDigitButton);
-            x+=40;
+            x += 40;
         }
     }
 
@@ -297,7 +304,7 @@ class MemoryButtonFactory {
             Button tempButton = new Button(memoryArrayText[i]);
             ButtonInfo tempDigitButton = new ButtonInfo(x + padding, y, tempButton);
             memoryButtonList.add(tempDigitButton);
-            y+=40;
+            y += 40;
         }
     }
 
@@ -314,7 +321,7 @@ class SpecialButtonFactory {
             Button tempButton = new Button(specialArrayText[i]);
             ButtonInfo tempDigitButton = new ButtonInfo(x + padding, y, tempButton);
             specialButtonList.add(tempDigitButton);
-            x+=60;
+            x += 60;
         }
     }
 
@@ -335,7 +342,7 @@ class ButtonInfo {
     }
 
     public int[] getCoords() {
-        int[] coords = {x, y};
+        int[] coords = { x, y };
         return coords;
     }
 

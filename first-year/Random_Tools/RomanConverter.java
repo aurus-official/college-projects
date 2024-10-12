@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 class RomanConverter {
@@ -12,13 +10,14 @@ class RomanConverter {
         int inputtedValue = scn.nextInt();
         String x = toRomanNumeral(inputtedValue, "");
         System.out.println("--------------------------");
-        System.out.println(String.format("The Roman Numeral of %s is %s.", inputtedValue,x));
+        System.out.println(String.format("The Roman Numeral of %s is %s.", inputtedValue, x));
         scn.close();
     }
 
     public static String toRomanNumeral(int value, String currentRoman) {
-        HashMap<Integer, String> romanTable = new HashMap<Integer, String>();
-        ArrayList<Integer> records = new ArrayList<>(Arrays.asList(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1));
+        LinkedHashMap<Integer, String> romanTable = new LinkedHashMap<Integer, String>();
+        // ArrayList<Integer> records = new ArrayList<>(Arrays.asList(1000, 900, 500,
+        // 400, 100, 90, 50, 40, 10, 9, 5, 4, 1));
         romanTable.put(1000, "M");
         romanTable.put(900, "CM");
         romanTable.put(500, "D");
@@ -37,7 +36,7 @@ class RomanConverter {
             return currentRoman;
         }
 
-        for (int i : records) {
+        for (int i : romanTable.keySet()) {
             if (value >= i) {
                 value -= i;
                 currentRoman += romanTable.get(i);
